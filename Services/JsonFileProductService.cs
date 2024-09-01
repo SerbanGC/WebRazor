@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using razor.Models;
+using System.Linq;
 
 namespace razor.Services
 {
@@ -30,6 +31,12 @@ namespace razor.Services
                         PropertyNameCaseInsensitive = true
                     });
             }
+        }
+
+        public Product GetProductById(string id)
+        {
+            var products = this.GetProducts().ToList();
+            return products.First(x => x.Id == id);
         }
     }
 }

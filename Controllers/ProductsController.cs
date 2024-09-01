@@ -24,5 +24,13 @@ namespace razor.Controllers
         {
             return service.GetProducts();
         }
+
+        [HttpGet("id")]
+        public Product GetProductById([FromQuery(Name = "product-id")] string id)
+        {
+            return service.GetProductById(id);
+        }
+
+
     }
 }
