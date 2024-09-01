@@ -1,11 +1,11 @@
 using razor.Services;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
-
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddTransient<JsonFileProductService>();
-
+builder.Services.AddControllers();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -18,11 +18,16 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
+app.MapControllers();
 app.UseAuthorization();
 
-app.MapRazorPages();
+app.MapGet("/minimal-products", (JsonFileProductService service) =>
+{
+    var jsonString = JsonSerializer.Serialize(service.GetProducts());
 
+    return jsonString;
+});
+
+app.MapRazorPages();
 app.Run();

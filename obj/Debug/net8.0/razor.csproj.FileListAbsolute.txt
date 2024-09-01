@@ -28,3 +28,4 @@
 /Users/gabrielserban/Desktop/DotNet projects/razor/obj/Debug/net8.0/razor.pdb
 /Users/gabrielserban/desktop/DotNet projects/razor/obj/Debug/net8.0/razor.genruntimeconfig.cache
 /Users/gabrielserban/desktop/DotNet projects/razor/obj/Debug/net8.0/ref/razor.dll
+/Users/gabrielserban/Desktop/DotNet projects/razor/obj/Debug/net8.0/razor.sourcelink.json
